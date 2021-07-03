@@ -15,7 +15,8 @@ from bokeh.resources import CDN
 from bokeh.embed import file_html
 from boto.s3.connection import S3Connection
 
-s3=S3Connection(os.environ['APIKEY'])
+#s3=S3Connection(os.environ['APIKEY'])
+
 
 
 
@@ -24,7 +25,7 @@ def pull_stock_info(symbol):
     params = {
         "function": 'TIME_SERIES_DAILY_ADJUSTED',
         "symbol": symbol,
-        "apikey": s3,
+        "apikey": "XLXN5O9BRJI8VWHJ",
         "outputsize": "compact"} 
     r = requests.get(url,params)
     data = r.json()
