@@ -4,7 +4,7 @@
 Created on Thu Jul  1 13:15:13 2021
 @author: ads2137
 """
-from getkey import milestone
+
 import requests
 import pandas as pd
 import numpy as np
