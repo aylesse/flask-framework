@@ -13,10 +13,10 @@ from flask import Flask, render_template, request, redirect
 from bokeh.plotting import figure
 from bokeh.resources import CDN
 from bokeh.embed import file_html
+from boto.s3.connection import S3Connection
 
-def index(request):
-    SECRET_KEY=os.environ.get(APIKEY) ## get API key from Heroku
-    return str(SECRET_KEY)
+s3=S3Connection(os.environ['APIKEY'])
+
 
 
 def pull_stock_info(symbol):
@@ -24,7 +24,7 @@ def pull_stock_info(symbol):
     params = {
         "function": 'TIME_SERIES_DAILY_ADJUSTED',
         "symbol": symbol,
-        "apikey": SECRET_KEY,
+        "apikey": s3,
         "outputsize": "compact"} 
     r = requests.get(url,params)
     data = r.json()
