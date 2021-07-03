@@ -1,0 +1,34 @@
+<!doctype html>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='milestone_app_style.css')}}'>
+<div class=page>
+    
+    <h1>Aylesse's Milestone App</h1>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-left">
+                    <h2>Type in your NASDAQ symbol of choice and select the data type to generate a plot:</h2>
+                    <form id='milestone_input' method='post' ><!-- action is the URL you want to move to next-->
+                      <p>
+                          Symbol: <input type='text' name='symbol' />
+                      </p>
+                      <p>
+                          <label for="data type">Data Type:</label>
+                          <select name="data" id="data">
+                              <option value="Opening Price">Opening Price</option>
+                              <option value="Closing Price">Closing Price</option>
+                              <option value="Adjusted Closing Price">Adjusted Closing Price</option>
+                          </select> 
+                      </p>		
+                  <p>
+                      <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
+                  </p>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</div>
+
+
