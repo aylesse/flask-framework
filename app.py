@@ -15,8 +15,8 @@ from bokeh.resources import CDN
 from bokeh.embed import file_html
 
 def index(request):
-    SECRET_KEY=os.environ.get('APIKEY') ## get API key from Heroku
-    return SECRET_KEY
+    SECRET_KEY=os.environ.get(APIKEY) ## get API key from Heroku
+    return str(SECRET_KEY)
 
 
 def pull_stock_info(symbol):
